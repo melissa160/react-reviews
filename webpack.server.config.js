@@ -15,10 +15,11 @@ module.exports = {
         loader: 'babel',
         exclude: /(node_modules)/,
         query: {
-          presets: ['latest-minimal', 'react']
+
+          presets: ['latest-minimal', 'react'] //conjunto de pluggins
         }
       }
     ]
   },
-  target: 'node',
+  target: 'node', //para usar los modulos nativos de node
 }
