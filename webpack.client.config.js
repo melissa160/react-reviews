@@ -1,0 +1,26 @@
+module.exports = {
+  entry: './source/client.js',
+  output: {
+    filename: 'app.js',
+    path: './built/statics',
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        loader: 'json',
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /(node_modules)/,
+        query: {
+
+          presets: ['es2016', 'es2017', 'react'], //conjunto de pluggins
+          plugins: ['transform-es2015-modules-commonjs'],
+        }
+      }
+    ]
+  },
+  target: 'web', //para usar los modulos en web javascript
+}
